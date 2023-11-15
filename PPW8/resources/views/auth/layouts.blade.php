@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" contents="width-device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-    <title>Laravel 10 Custom User Registration & Login Tutorial AllPHPTricks.com</title>
+    <title>Laravel 10 Custom User Registration & Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsAZYBKQhggwzxH7pPCAQD46MgQM88zW1RWH61DGLwZJEK2Kadq2F9CUG65" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="{{ asset('lightbox2/dist/css/lightbox.min.css') 
+}}"> 
 </head>
 <style>
     body {
@@ -125,6 +127,12 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{{ route ('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">Logout</a> 
+
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ 
+                                            route('gallery.index') }}">Gallery</a>
+                                        </li>
+
                                     <form id="Logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                     </form>
@@ -140,7 +148,8 @@
         <div class="container">
             @yield('content')
         </div>
-
+        <script src="{{ asset('lightbox2/dist/js/lightbox-plus-jquery.min.js') 
+}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBI4zVF@@GIMS4hcpxy09F7jL+jjxkk+Q2h455rYXK/Auo31+014" crossorigine="anonymous"></script>
     </body>
 </html>

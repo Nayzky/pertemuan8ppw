@@ -1520,6 +1520,12 @@ section {
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
     </div>
+    <!-- <li class="nav-item">
+                                        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ 
+                                            route('gallery.index') }}">Gallery</a>
+                                        </li> -->
     <script src="{{ asset('app.js') }}"></script>
+    <script src="{{ asset('lightbox2/dist/js/lightbox-plus-jquery.min.js') 
+}}"></script>
 </body>
 </html>
