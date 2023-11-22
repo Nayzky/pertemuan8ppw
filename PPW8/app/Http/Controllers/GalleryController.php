@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
+
 class GalleryController extends Controller
 {
     public function index()
